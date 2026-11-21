@@ -106,3 +106,6 @@
 
   window.addEventListener('load',function(){ScrollTrigger.refresh()});
 })();
+(function(){if(!window.gsap||!window.ScrollTrigger||matchMedia('(prefers-reduced-motion: reduce)').matches){return}
+  ScrollTrigger.create({trigger:'.rv-list',start:'top 85%',once:true,onEnter:function(){gsap.from('.rv-list li',{y:50,rotation:-3,duration:.5,stagger:.1,ease:'back.out(1.6)'})}});
+})();
