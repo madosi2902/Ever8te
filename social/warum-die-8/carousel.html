@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>EVER8TE Carousel: Warum die 8?</title>
+<style>
+@font-face{font-family:"Barlow Condensed";font-style:italic;font-weight:800;src:url("../../public/assets/fonts/barlow-condensed-latin-800-italic.woff2") format("woff2")}
+@font-face{font-family:"Barlow Condensed";font-style:italic;font-weight:900;src:url("../../public/assets/fonts/barlow-condensed-latin-900-italic.woff2") format("woff2")}
+@font-face{font-family:"Manrope";font-weight:500;src:url("../../public/assets/fonts/manrope-latin-500-normal.woff2") format("woff2")}
+@font-face{font-family:"Manrope";font-weight:700;src:url("../../public/assets/fonts/manrope-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:"Manrope";font-weight:800;src:url("../../public/assets/fonts/manrope-latin-800-normal.woff2") format("woff2")}
+:root{--black:#000;--panel:#15101a;--magenta:#ff1489;--deep:#8f0a4c;--clay:#a8401a;--sand:#f4efe8;--muted:#b9adb6}
+*{box-sizing:border-box}
+html,body{margin:0;background:#000}
+.slide{position:relative;width:1080px;height:1350px;overflow:hidden;background:var(--black);color:var(--sand);font-family:Manrope,sans-serif;display:none}
+.slide.on{display:block}
+.d{font-family:"Barlow Condensed",sans-serif;font-style:italic;font-weight:800;text-transform:uppercase;line-height:.84;margin:0;letter-spacing:-.005em}
+.m{color:var(--magenta)}
+.chrome{position:absolute;inset:0;pointer-events:none;z-index:20}
+.logo{position:absolute;left:64px;top:60px;height:34px}
+.count{position:absolute;right:64px;top:60px;font-weight:800;font-size:24px;letter-spacing:.12em;color:var(--sand)}
+.count b{color:var(--magenta)}
+.swipe{position:absolute;right:64px;bottom:60px;display:flex;align-items:center;gap:14px;font-family:"Barlow Condensed";font-style:italic;font-weight:800;font-size:34px;text-transform:uppercase;letter-spacing:.04em}
+.swipe svg{width:58px;height:24px}
+.bar{position:absolute;left:64px;bottom:72px;display:flex;gap:8px}
+.bar i{display:block;width:34px;height:5px;background:rgba(244,239,232,.22);transform:skewX(-20deg)}
+.bar i.a{background:var(--magenta)}
+.inf{position:absolute;overflow:visible}
+.inf svg{width:100%;height:100%;overflow:visible;display:block}
+.inf path{fill:none;stroke:var(--magenta);stroke-linejoin:round;stroke-linecap:round}
+.inf .ball,.inf .tr circle{fill:var(--sand)}
+.glow{position:absolute;inset:0;background:radial-gradient(60% 45% at 70% 45%,rgba(255,20,137,.16),transparent 70%)}
+.lede{font-size:38px;line-height:1.35;font-weight:500;color:var(--sand);margin:0}
+.lede b{font-weight:800}
+.tag{display:inline-block;box-shadow:0 10px 30px rgba(0,0,0,.35);font-family:"Barlow Condensed";font-style:italic;font-weight:800;text-transform:uppercase;font-size:64px;line-height:1;padding:14px 26px 12px;transform:skewX(-9deg);background:var(--magenta);color:#000}
+.tag.s{background:var(--sand)}
+
+/* Slide 1 */
+#s1 .inf{left:470px;top:110px;width:720px;height:1100px}
+#s1 h1{position:absolute;left:58px;bottom:190px;font-size:250px}
+#s1 h1>span{display:block}
+/* Slide 2 */
+#s2 h2{position:absolute;left:60px;top:170px;font-size:150px}
+#s2 .inf{left:190px;top:470px;width:700px;height:700px}
+#s2 .lede{position:absolute;left:64px;bottom:170px;width:760px}
+/* Slide 3 */
+#s3 h2{position:absolute;left:60px;top:180px;font-size:200px}
+#s3 .inf{left:0;top:430px;width:1080px;height:860px}
+#s3 .lede{position:absolute;left:64px;bottom:150px}
+/* Slide 4 */
+#s4 .eyebrow{position:absolute;left:64px;top:230px;font-size:40px;font-weight:700;color:var(--muted)}
+#s4 .word{position:absolute;left:0;right:0;top:350px;text-align:center;font-size:330px;white-space:nowrap}
+#s4 .word span{display:inline-block}
+#s4 .say{position:absolute;left:64px;top:760px}
+#s4 .say .lab{font-size:34px;font-weight:700;color:var(--muted);margin-bottom:22px;text-transform:uppercase;letter-spacing:.14em}
+#s4 .say .tag{font-size:150px;padding:20px 40px 14px}
+#s4 .lede{position:absolute;left:64px;bottom:170px;width:900px}
+/* Slide 5 */
+#s5 .bg{position:absolute;left:0;right:0;top:640px;height:820px;background:url("../../public/assets/court-balls.webp") center 42%/cover;transform-origin:50% 30%}
+#s5 .shade{position:absolute;inset:0;background:linear-gradient(180deg,#000 0%,#000 48%,rgba(0,0,0,0) 68%,rgba(0,0,0,0) 85%,rgba(0,0,0,.7) 100%)}
+#s5 h2{position:absolute;left:60px;top:180px;font-size:200px}
+#s5 .lede{position:absolute;left:64px;top:370px;width:900px}
+#s5 .tags{position:absolute;left:64px;top:500px;display:flex;flex-wrap:wrap;gap:22px 26px;width:960px;z-index:2}
+/* Slide 6 */
+#s6 .inf{display:none}
+#s6 .inf path{stroke:var(--deep)}
+#s6 .bag{position:absolute;right:50px;top:400px;width:450px;filter:drop-shadow(0 40px 60px rgba(0,0,0,.7))}
+#s6 h2{position:absolute;left:60px;top:190px;font-size:150px;width:520px;z-index:3;line-height:.95}
+#s6 .info{position:absolute;left:64px;bottom:270px;width:560px;z-index:3}
+#s6 .info .lede{font-size:32px}
+#s6 .cta{position:absolute;left:70px;bottom:150px;z-index:3;font-size:58px}
+#s6 .new{position:absolute;right:64px;bottom:162px;font-size:28px;font-weight:700;text-align:right;color:var(--sand);z-index:3}
+#s6 .new b{color:var(--magenta);font-weight:800}
+</style>
+</head>
+<body>
+
+<section class="slide" id="s1">
+  <div class="glow"></div>
+  <div class="inf" data-inf></div>
+  <h1 class="d"><span class="l1">Warum</span><span class="l2">die <span class="m">8</span>?</span></h1>
+  <div class="chrome"><img class="logo" src="../../public/assets/logo.png"><div class="count"><b>01</b> / 06</div>
+    <div class="swipe"><span>Swipe</span><svg viewBox="0 0 58 24"><path d="M0 12H52M42 2L54 12L42 22" fill="none" stroke="#ff1489" stroke-width="4"/></svg></div></div>
+</section>
+
+<section class="slide" id="s2">
+  <h2 class="d"><span class="l1" style="display:block">Leg die 8</span><span class="l2" style="display:block">auf die <span class="m">Seite.</span></span></h2>
+  <div class="inf" data-inf></div>
+  <p class="lede">… und sie wird zum Zeichen für <b class="m">Unendlichkeit.</b></p>
+  <div class="chrome"><img class="logo" src="../../public/assets/logo.png"><div class="count"><b>02</b> / 06</div>
+    <div class="swipe"><span>Swipe</span><svg viewBox="0 0 58 24"><path d="M0 12H52M42 2L54 12L42 22" fill="none" stroke="#ff1489" stroke-width="4"/></svg></div></div>
+</section>
+
+<section class="slide" id="s3">
+  <div class="glow" style="background:radial-gradient(55% 35% at 50% 66%,rgba(255,20,137,.18),transparent 70%)"></div>
+  <h2 class="d"><span style="display:block">Kein Ende</span><span style="display:block">in <span class="m">Sicht.</span></span></h2>
+  <div class="inf" data-inf></div>
+  <p class="lede">Daher kommt der Name <b>EVER<span class="m">8</span>TE</b>.</p>
+  <div class="chrome"><img class="logo" src="../../public/assets/logo.png"><div class="count"><b>03</b> / 06</div>
+    <div class="swipe"><span>Swipe</span><svg viewBox="0 0 58 24"><path d="M0 12H52M42 2L54 12L42 22" fill="none" stroke="#ff1489" stroke-width="4"/></svg></div></div>
+</section>
+
+<section class="slide" id="s4">
+  <div class="eyebrow">Und wie spricht man das?</div>
+  <div class="word d"><span>E</span><span>V</span><span>E</span><span>R</span><span class="m eight">8</span><span>T</span><span>E</span></div>
+  <div class="say"><div class="lab">Gesprochen</div><div class="tag">„Everate“</div></div>
+  <p class="lede">Die 8 liest du einfach mit. <b>Ever · 8 · te.</b></p>
+  <div class="chrome"><img class="logo" src="../../public/assets/logo.png"><div class="count"><b>04</b> / 06</div>
+    <div class="swipe"><span>Swipe</span><svg viewBox="0 0 58 24"><path d="M0 12H52M42 2L54 12L42 22" fill="none" stroke="#ff1489" stroke-width="4"/></svg></div></div>
+</section>
+
+<section class="slide" id="s5">
+  <div class="bg"></div><div class="shade"></div>
+  <h2 class="d">Match <span class="m">Drink.</span></h2>
+  <p class="lede">So steht es auf dem Beutel. Weil er genau dafür gemacht ist:</p>
+  <div class="tags">
+    <span class="tag">Tennis</span><span class="tag s">Padel</span><span class="tag">Squash</span>
+    <span class="tag s">Badminton</span><span class="tag">Tischtennis</span><span class="tag s">Pickleball</span>
+  </div>
+  <div class="chrome"><img class="logo" src="../../public/assets/logo.png"><div class="count"><b>05</b> / 06</div>
+    <div class="swipe"><span>Swipe</span><svg viewBox="0 0 58 24"><path d="M0 12H52M42 2L54 12L42 22" fill="none" stroke="#ff1489" stroke-width="4"/></svg></div></div>
+</section>
+
+<section class="slide" id="s6">
+  <div class="glow" style="background:radial-gradient(50% 40% at 72% 50%,rgba(255,20,137,.2),transparent 70%)"></div>
+  <div class="inf" data-inf></div>
+  <img class="bag" src="../../public/assets/bag.webp">
+  <h2 class="d">Dein nächstes Match <span class="m">wartet.</span></h2>
+  <div class="info"><p class="lede"><b>EVER8TE PinkBerry</b><br>Match Drink · 500 g · ca. 14 Portionen<br>Hergestellt in Deutschland</p></div>
+  <div class="cta tag">Link in Bio</div>
+  <div class="new">Neu hier?<br><b>−20 %</b> auf die erste Bestellung</div>
+  <div class="chrome"><img class="logo" src="../../public/assets/logo.png"><div class="count"><b>06</b> / 06</div></div>
+</section>
+
+<script>
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const P=(t,a,b)=>clamp((t-a)/(b-a));
+const outC=x=>1-Math.pow(1-x,3);
+const ioC=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const backOut=(x,s=1.5)=>1+(s+1)*Math.pow(x-1,3)+s*Math.pow(x-1,2);
+const TAU=Math.PI*2;
+const pt=th=>[0.575*Math.sin(2*th),Math.cos(th)];
+
+// Die 8 der Website: x = 0,575·sin 2θ, y = cos θ. Gedreht um 90° wird sie zur liegenden Acht.
+function makeInf(el,sw){
+  const N=240;let d='';
+  for(let i=0;i<=N;i++){const [x,y]=pt(i/N*TAU);d+=(i?'L':'M')+x.toFixed(4)+' '+y.toFixed(4)}
+  el.innerHTML=`<svg viewBox="-1.3 -1.3 2.6 2.6" preserveAspectRatio="xMidYMid meet"><g class="rot"><path pathLength="1" d="${d}Z" stroke-width="${sw}"/><g class="tr"></g><circle class="ball" r=".085"/></g></svg>`;
+  const g=el.querySelector('.rot'),p=el.querySelector('path'),b=el.querySelector('.ball'),tr=el.querySelector('.tr');
+  for(let i=0;i<7;i++){const c=document.createElementNS('http://www.w3.org/2000/svg','circle');tr.appendChild(c)}
+  return{set(o){
+    const draw=o.draw??1,rot=o.rot??0,th=o.th??0,ball=o.ball??1;
+    p.style.strokeDasharray=1;p.style.strokeDashoffset=1-draw;
+    g.setAttribute('transform',`rotate(${rot})`);
+    const [x,y]=pt(th);b.setAttribute('cx',x);b.setAttribute('cy',y);b.style.opacity=ball;
+    [...tr.children].forEach((c,i)=>{const [cx,cy]=pt(th-(i+1)*.09);c.setAttribute('cx',cx);c.setAttribute('cy',cy);c.setAttribute('r',.07-i*.008);c.style.opacity=ball*(.42-i*.055)});
+  }};
+}
+const infs={};
+document.querySelectorAll('.slide').forEach(s=>{const e=s.querySelector('[data-inf]');if(e)infs[s.id]=makeInf(e,s.id==='s6'?.2:.16)});
+const $=(s,q)=>document.querySelector('#'+s+' '+q);
+const $$=(s,q)=>[...document.querySelectorAll('#'+s+' '+q)];
+const fade=(el,x,dy=40,dx=0)=>{el.style.opacity=x;el.style.transform=`translate(${(1-x)*dx}px,${(1-x)*dy}px)`};
+const chromeIn=(s,t)=>{const c=$(s,'.chrome');c.style.opacity=outC(P(t,.1,.6));const sw=$(s,'.swipe');if(sw){sw.style.opacity=outC(P(t,2.2,2.8));sw.style.transform=`translateX(${Math.sin(t*5)*8*P(t,2.6,3)}px)`}};
+
+const R={
+ s1(t){ // 8 zeichnet sich, Ball läuft los
+   const dr=ioC(P(t,.2,1.6));
+   infs.s1.set({draw:dr,rot:0,th:(t-1.5)*TAU/2.4,ball:P(t,1.4,1.8)});
+   fade($('s1','.l1'),outC(P(t,1.0,1.6)),0,-80);fade($('s1','.l2'),outC(P(t,1.25,1.85)),0,-80);
+   chromeIn('s1',t);
+ },
+ s2(t){ // 8 kippt zur liegenden Acht
+   fade($('s2','.l1'),outC(P(t,.2,.8)),0,-60);fade($('s2','.l2'),outC(P(t,.45,1.05)),0,-60);
+   const r=backOut(P(t,1.5,2.5),1.6);
+   infs.s2.set({draw:1,rot:90*r,th:t*TAU/2.4,ball:1});
+   fade($('s2','.lede'),outC(P(t,2.6,3.2)));
+   chromeIn('s2',t);
+ },
+ s3(t){ // Endlosschleife: 6 s = 2 Runden, nahtlos
+   infs.s3.set({draw:1,rot:90,th:t*TAU/3,ball:1});
+   fade($('s3','h2'),1,0);fade($('s3','.lede'),1,0);
+   $('s3','.chrome').style.opacity=1;const sw=$('s3','.swipe');sw.style.opacity=1;sw.style.transform=`translateX(${Math.sin(t*TAU/1.5)*8}px)`;
+ },
+ s4(t){ // Buchstaben fallen rein, die 8 kippt kurz und kommt zurück, Aussprache wischt rein
+   fade($('s4','.eyebrow'),outC(P(t,.1,.6)),20);
+   $$('s4','.word span').forEach((e,i)=>{const x=outC(P(t,.3+i*.09,.75+i*.09));e.style.opacity=x;e.style.transform=`translateY(${(1-x)*-120}px)`});
+   const e8=$('s4','.eight');
+   const k=t<2.6?backOut(P(t,1.6,2.3),1.4):1-ioC(P(t,2.9,3.4));
+   e8.style.transform=`rotate(${90*k}deg) scale(${1+.08*k})`;
+   const w=ioC(P(t,3.3,4.0));const say=$('s4','.say .tag');say.style.clipPath=`inset(0 ${100-w*100}% 0 0)`;
+   fade($('s4','.lab'),outC(P(t,3.1,3.6)),20);
+   fade($('s4','.lede'),outC(P(t,4.0,4.6)));
+   chromeIn('s4',t);
+ },
+ s5(t){ // Sandplatz, Sportarten stempeln rein
+   $('s5','.bg').style.transform=`scale(${1+t*.012})`;
+   fade($('s5','h2'),outC(P(t,.2,.8)),0,-80);fade($('s5','.lede'),outC(P(t,.7,1.3)),30);
+   $$('s5','.tag').forEach((e,i)=>{const x=backOut(P(t,1.4+i*.22,1.9+i*.22),2);e.style.opacity=P(t,1.4+i*.22,1.6+i*.22);e.style.transform=`skewX(-9deg) scale(${.4+.6*x})`});
+   chromeIn('s5',t);
+ },
+ s6(t){ // CTA, Beutel schwebt
+   infs.s6.set({draw:ioC(P(t,0,1.4)),rot:90,th:t*TAU/3,ball:P(t,1.2,1.6)});
+   const b=$('s6','.bag');const bi=outC(P(t,.3,1.1));b.style.opacity=bi;b.style.transform=`translateY(${(1-bi)*80+Math.sin(t*TAU/3)*12}px) rotate(${4+Math.sin(t*TAU/3)*1.2}deg)`;
+   fade($('s6','h2'),outC(P(t,.8,1.4)),0,-80);fade($('s6','.info'),outC(P(t,1.4,2.0)));
+   const c=backOut(P(t,2.0,2.6),2);const cta=$('s6','.cta');cta.style.opacity=P(t,2.0,2.2);cta.style.transform=`skewX(-9deg) scale(${.5+.5*c+Math.sin(Math.max(0,t-3)*4)*.02*P(t,3,3.3)})`;
+   fade($('s6','.new'),outC(P(t,2.5,3.1)),20);
+   $('s6','.chrome').style.opacity=outC(P(t,.1,.6));
+ }
+};
+window.show=n=>{document.querySelectorAll('.slide').forEach(s=>s.classList.toggle('on',s.id==='s'+n))};
+window.render=(n,t)=>R['s'+n](t);
+// Vorschau im Browser: carousel.html#3 spielt Slide 3 in Schleife
+const n=+(location.hash.slice(1)||0);
+if(n){show(n);const t0=performance.now();(function f(){render(n,((performance.now()-t0)/1000)%6);requestAnimationFrame(f)})()}
+</script>
+</body>
+</html>
