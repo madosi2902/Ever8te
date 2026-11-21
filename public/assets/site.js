@@ -1,14 +1,28 @@
 (function(){
+  // Newsletter: Double-Opt-In über Brevo (Netlify-Function /api/newsletter)
   document.querySelectorAll('form.signup').forEach(function(f){
     f.addEventListener('submit',function(e){
       e.preventDefault();
-      var btn=f.querySelector('button'),lab=btn.querySelector('span'),msg=f.querySelector('.signup-msg');
-      btn.disabled=true;lab.textContent='Sende …';
-      fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()})
-      .then(function(r){if(!r.ok){throw 0}f.classList.add('done');msg.textContent='Danke! Dein Code kommt per E-Mail.';msg.className='signup-msg ok'})
-      .catch(function(){msg.textContent='Das hat nicht geklappt. Bitte versuch es noch einmal.';msg.className='signup-msg err';btn.disabled=false;lab.textContent='Code sichern'});
+      var btn=f.querySelector('button'),lab=btn.querySelector('span'),msg=f.querySelector('.signup-msg'),old=lab.textContent;
+      btn.disabled=true;lab.textContent='Sende …';msg.textContent='';msg.className='signup-msg';
+      var body=new URLSearchParams(new FormData(f)).toString(),hdr={'Content-Type':'application/x-www-form-urlencoded'};
+      fetch('/api/newsletter',{method:'POST',headers:hdr,body:body})
+      .then(function(r){return r.json().catch(function(){return {}}).then(function(d){
+        // Solange Brevo nicht eingerichtet ist: Anmeldung wie bisher über Netlify Forms speichern
+        if(d.error==='not_configured'||r.status===404){return fetch('/',{method:'POST',headers:hdr,body:body}).then(function(r2){if(!r2.ok){throw {}}return {ok:true,legacy:true}})}
+        if(!r.ok||!d.ok){throw d}return d})})
+      .then(function(d){f.classList.add('done');msg.textContent=d.legacy?'Danke! Dein Code kommt per E-Mail.':d.existing?'Du bist schon angemeldet. Schau in dein Postfach, dort liegt dein Code.':'Fast geschafft! Bitte bestätige deine Anmeldung über den Link in der E-Mail, die wir dir gerade geschickt haben. Danach kommt dein Code.';msg.className='signup-msg ok'})
+      .catch(function(d){msg.textContent=d&&d.error==='invalid_email'?'Bitte prüfe deine E-Mail-Adresse.':'Das hat nicht geklappt. Bitte versuch es noch einmal.';msg.className='signup-msg err';btn.disabled=false;lab.textContent=old});
     });
   });
+  // Mobiles Menü
+  var t=document.querySelector('.nav-toggle'),nav=document.getElementById('mainnav');
+  if(t&&nav){
+    function set(o){t.setAttribute('aria-expanded',o?'true':'false');document.documentElement.classList.toggle('menu-open',o)}
+    t.addEventListener('click',function(){set(t.getAttribute('aria-expanded')!=='true')});
+    nav.addEventListener('click',function(e){if(e.target.closest('a')){set(false)}});
+    addEventListener('keydown',function(e){if(e.key==='Escape'){set(false)}});
+  }
 })();
 window.E8inf=function(root){
   if(!root){return {start:function(){}}}
@@ -57,6 +71,7 @@ window.E8inf=function(root){
   render();
 })();
 (function(){
+  if(!document.querySelector('.page-hero')){return} // Startseite: eigenes Skript (home.js)
   var bar=document.getElementById('buybar'),buy=document.getElementById('kaufen');
   function tog(){if(!bar){return}var r=buy?buy.getBoundingClientRect():{top:1e9,bottom:1e9};bar.classList.toggle('on',scrollY>240&&(r.top>innerHeight||r.bottom<0))}
   addEventListener('scroll',tog,{passive:true});tog();

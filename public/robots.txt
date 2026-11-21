@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ever8te.de/sitemap.xml
