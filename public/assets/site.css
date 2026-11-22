@@ -102,16 +102,8 @@ h2.display{font-size:clamp(2.9rem,8.4vw,6.6rem)}
   .hero .bag{width:40vw;max-width:230px}
 }
 
-/* Laufband */
-.band{position:relative;z-index:4;background:var(--magenta);color:var(--black);transform:rotate(-2deg) scale(1.04);margin-block:-18px 0;overflow:hidden;padding-block:10px}
-.band-track{display:flex;width:max-content;font-family:var(--display);font-style:italic;font-weight:900;text-transform:uppercase;font-size:clamp(2rem,5vw,3.6rem);line-height:1;white-space:nowrap;will-change:transform}
-.band-track span{padding-inline:.45em}
-.band-track i{font-style:normal;display:inline-block;width:.95em;align-self:center;line-height:0}
-.band-track i svg{width:100%;height:auto;overflow:visible}
-.band-track i path{fill:none;stroke:var(--black);stroke-width:.34}
-
 /* Sandplatz */
-.clay{position:relative;background:var(--clay) url("clay.webp") center/cover;color:var(--line);overflow:hidden;margin-top:-30px;padding-block:clamp(110px,14vw,190px) clamp(80px,10vw,140px)}
+.clay{position:relative;background:var(--clay) url("clay.webp") center/cover;color:var(--line);overflow:hidden;padding-block:clamp(110px,14vw,190px) clamp(80px,10vw,140px)}
 .clay::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(111,38,13,.25),rgba(111,38,13,.72))}
 .court-line{position:absolute;left:0;right:0;height:clamp(12px,1.6vw,20px);background:var(--line);transform-origin:left center;box-shadow:0 2px 0 rgba(0,0,0,.18)}
 .court-line.top{top:clamp(58px,7vw,96px)}

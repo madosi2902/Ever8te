@@ -45,18 +45,6 @@
       .to('.bag',{rotation:-6,scale:1.05,ease:'none'},0);
   });
 
-  // Laufband: Tempo folgt dem Scrollen
-  var track=document.getElementById('bandTrack');
-  track.innerHTML+=track.innerHTML+track.innerHTML+track.innerHTML;
-  var unit=track.scrollWidth/4, x=0, boost=0;
-  ScrollTrigger.create({onUpdate:function(s){boost=Math.max(-40,Math.min(40,s.getVelocity()/55))}});
-  gsap.ticker.add(function(t,dt){
-    boost*=.92;
-    x-=(1.4+Math.abs(boost))*(dt/16.7);
-    if(x<=-unit){x+=unit}
-    track.style.transform='translate3d('+x+'px,0,0)';
-  });
-
   // Sandplatz: Linie wird gezogen, Fotos schieben sich
   gsap.fromTo('#courtLine',{scaleX:0},{scaleX:1,ease:'none',scrollTrigger:{trigger:'.clay',start:'top 85%',end:'top 25%',scrub:.4}});
   gsap.to('.clay-photos img:first-child',{y:-50,ease:'none',scrollTrigger:{trigger:'.clay',start:'top bottom',end:'bottom top',scrub:.6}});
