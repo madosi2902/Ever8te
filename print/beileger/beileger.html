@@ -35,7 +35,7 @@ body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .front{background:var(--black);color:var(--cream);font-family:var(--body)}
 .front .eight{position:absolute;right:-24mm;top:4mm;width:74mm;height:auto;opacity:.9}
 .front .bag{position:absolute;right:3mm;bottom:28mm;width:39mm;transform:rotate(9deg);filter:drop-shadow(0 3mm 5mm rgba(0,0,0,.7))}
-.front .logo{position:absolute;left:var(--safe);top:var(--safe);width:36mm}
+.front .shopmark{position:absolute;left:var(--safe);top:var(--safe);font-size:6mm;letter-spacing:.02em;border-bottom:.7mm solid var(--magenta);padding-bottom:1mm}
 .front h1{position:absolute;left:var(--safe);top:21mm;font-size:15.5mm;width:80mm}
 .front h1 span{display:block}
 .front h1 span + span{margin-left:5mm}
@@ -51,16 +51,16 @@ body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 
 /* ---------- Rückseite ---------- */
 .back{background:var(--cream);color:var(--black);font-family:var(--body)}
-.back .band{position:absolute;left:0;right:0;top:0;height:33mm;background:var(--black);color:var(--cream)}
+.back .band{position:absolute;left:0;right:0;top:0;height:35mm;background:var(--black);color:var(--cream)}
 .back .band h2{position:absolute;left:var(--safe);top:var(--safe);font-size:11.5mm}
 .back .band h2 em{font-style:inherit;color:var(--magenta)}
-.back .band p{position:absolute;left:var(--safe);right:var(--safe);top:23.5mm;font-size:2.7mm;line-height:1.35;font-weight:500}
-.tracker{position:absolute;left:var(--safe);right:var(--safe);top:38mm;display:grid;grid-template-columns:repeat(7,1fr);gap:2mm}
-.box{position:relative;aspect-ratio:1;border:.45mm solid var(--black);transform:skewX(-9deg)}
-.box span{position:absolute;left:1mm;top:.6mm;transform:skewX(9deg);font-family:var(--display);font-style:italic;font-weight:800;font-size:3.6mm;line-height:1}
-.box.hot{background:var(--magenta);border-color:var(--magenta)}
-.box.hot span{color:var(--black)}
-.hint{position:absolute;left:var(--safe);right:var(--safe);top:65.5mm;font-size:2.6mm;line-height:1.4;font-weight:500}
+.back .band p{position:absolute;left:var(--safe);right:22mm;top:21.5mm;font-size:2.7mm;line-height:1.35;font-weight:500}
+.facts{position:absolute;left:var(--safe);right:var(--safe);top:40mm;display:grid;grid-template-columns:repeat(3,1fr);gap:2.5mm}
+.fact{border:.45mm solid var(--black);transform:skewX(-9deg);padding:2mm 2.5mm 2.2mm}
+.fact > div{transform:skewX(9deg)}
+.fact b{display:block;font-family:var(--display);font-style:italic;font-weight:900;font-size:8.5mm;line-height:.9;color:var(--magenta)}
+.fact span{display:block;margin-top:1mm;font-size:2.3mm;line-height:1.25;font-weight:700}
+.hint{position:absolute;left:var(--safe);right:var(--safe);top:62mm;font-size:2.6mm;line-height:1.4;font-weight:500}
 .hint b{font-weight:800}
 .hint .arrow{display:inline-block;width:3mm;height:3mm;background:var(--magenta);transform:skewX(-9deg);vertical-align:-.4mm;margin-right:1mm}
 
@@ -103,10 +103,10 @@ body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
     </g>
   </svg>
   <img class="bag" src="../../public/assets/bag.webp" alt="">
-  <img class="logo" src="../../public/assets/logo.png" alt="EVER8TE">
+  <div class="shopmark display">The Tennisbase</div>
 
   <h1 class="display"><span>Danke fürs</span><span>Mitspielen.</span></h1>
-  <p class="sub">Schön, dass du EVER8TE auf den Platz nimmst. Für den nächsten Satz legen wir was drauf:</p>
+  <p class="sub">Schön, dass du bei The Tennisbase bestellt hast. Für den nächsten Satz legen wir was drauf:</p>
 
   <div class="offer">
     <div class="tag"><span>−10&nbsp;%</span></div>
@@ -118,21 +118,22 @@ body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
     <b>REVANCHE10</b>
   </div>
 
-  <p class="fine">Einlösbar im Shop von The Tennisbase (the-tennisbase.com). Einmal pro Kunde, nicht mit anderen Rabatten kombinierbar.</p>
+  <p class="fine">Gilt für den gesamten Shop auf the-tennisbase.com. Einmal pro Kunde, nicht mit anderen Rabatten kombinierbar.</p>
 </section>
 
 <!-- ===================== RÜCKSEITE ===================== -->
 <section class="page back">
   <div class="band">
-    <h2 class="display">Dein <em>Match</em>-Tracker</h2>
-    <p>14 Portionen im Beutel. Hak jedes Match ab, dann weißt du immer, wie viel noch drin ist.</p>
+    <h2 class="display">Schon <em>probiert?</em></h2>
+    <p><b>EVER8TE® PinkBerry</b> – der Match Drink für Tennis, Padel und Racket-Sport. Entwickelt von einem Ex-ATP-Profi.</p>
   </div>
 
-  <div class="tracker">
-    <div class="box"><span>1</span></div><div class="box"><span>2</span></div><div class="box"><span>3</span></div><div class="box"><span>4</span></div><div class="box"><span>5</span></div><div class="box"><span>6</span></div><div class="box"><span>7</span></div>
-    <div class="box"><span>8</span></div><div class="box"><span>9</span></div><div class="box hot"><span>10</span></div><div class="box"><span>11</span></div><div class="box"><span>12</span></div><div class="box"><span>13</span></div><div class="box"><span>14</span></div>
+  <div class="facts">
+    <div class="fact"><div><b>30 g</b><span>Kohlen&shy;hydrate pro Portion</span></div></div>
+    <div class="fact"><div><b>70 mg</b><span>Magnesium pro Portion, plus Natrium</span></div></div>
+    <div class="fact"><div><b>ca.&nbsp;14</b><span>Portionen pro 500-g-Beutel</span></div></div>
   </div>
-  <p class="hint"><i class="arrow"></i><b>Bei Portion 10 nachbestellen</b> – dann ist der neue Beutel da, bevor der alte leer ist.</p>
+  <p class="hint"><i class="arrow"></i><b>Für lange Tage auf dem Platz:</b> drei Sätze in der Mittagssonne, zwei Matches am Turniertag, Training nach der Arbeit.</p>
 
   <div class="howto">
     <h3 class="display">So geht’s</h3>
@@ -144,8 +145,8 @@ body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   </div>
 
   <div class="qr">
-    <div class="frame"><img src="qr.svg" alt="QR-Code zum Nachbestellen mit Code REVANCHE10"></div>
-    <p>Scannen &amp; nachbestellen<small>Der Code REVANCHE10 ist schon eingelöst.</small></p>
+    <div class="frame"><img src="qr.svg" alt="QR-Code zu EVER8TE PinkBerry mit Code REVANCHE10"></div>
+    <p>Scannen &amp; probieren<small>Deine −10&nbsp;% mit REVANCHE10 sind schon eingelöst.</small></p>
   </div>
 
   <div class="foot">
