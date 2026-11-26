@@ -8,7 +8,7 @@
 
 ## Bisherige Clips
 
-| Datum | Clip | Kanal | Status | Buffer-Post-ID |
+| Datum | Clip | Kanal (Reel/Story) | Status | Buffer-Post-IDs |
 |---|---|---|---|---|
 | bis 26.11.2026 | 01_satz3 | Instagram | manuell gepostet | – |
 | bis 26.11.2026 | 02_stufe8 | Instagram | manuell gepostet | – |
