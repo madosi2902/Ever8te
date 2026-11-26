@@ -1,1 +1,4 @@
 build/
+media-site/v/
+media-site/manifest.json
+media-site/.netlify/

@@ -4,7 +4,8 @@ Cartoon-Clips für TikTok und Instagram Reels im One-Line-Art-Stil. Alles wird p
 
 - **Inhalt und Regeln:** [`CONTENT-GUIDE.md`](CONTENT-GUIDE.md). Vor jedem neuen Clip lesen.
 - **Captions:** [`captions.md`](captions.md)
-- **Fertige Videos:** `videos/*.mp4`
+- **Fertige Videos:** `videos/*.mp4` (ab Clip 07 nicht mehr im Repo, sondern auf https://ever8te-media.netlify.app)
+- **Täglicher Ablauf (Autopilot):** [`AUTOPILOT.md`](AUTOPILOT.md), Log in [`posted.md`](posted.md)
 
 ## Aufbau
 
