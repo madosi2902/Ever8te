@@ -16,4 +16,4 @@
 | bis 26.11.2026 | 04_ballmaschine | Instagram | manuell gepostet | – |
 | bis 26.11.2026 | 05_doppelpartner | – | noch nicht gepostet | – |
 | bis 26.11.2026 | 06_blackweek | Instagram | manuell gepostet | – |
-| 27.11.2026 | 07_balltipper (Caption siehe captions.md) | Instagram Reel + Story | wartet auf Freigabe | Reel `6b093017658222306cf03621`, Story `6b093018049983dcfb99ed41` |
+| 27.11.2026 | 07_balltipper (Caption siehe captions.md) | Instagram Reel + Story | eingeplant 27.11.2026 14:00 | Reel `6b093017658222306cf03621`, Story `6b093018049983dcfb99ed41` |
