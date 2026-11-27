@@ -1,0 +1,17 @@
+{
+ "label": "Angebot des Tages",
+ "eyebrow": "Nur bis Montag, 30.11.",
+ "title": "Black Friday",
+ "image": "img/racket.png",
+ "badge": "-46%",
+ "brand": "Head · Musetti Limited",
+ "name": "Boom MP<br>Neon 2025",
+ "oldLabel": "UVP 280,00 €",
+ "price": 149.99,
+ "code": "BLACK10",
+ "codePrice": 134.99,
+ "stock": "Nur noch 2 Stück verfügbar",
+ "cta": "Jetzt sichern",
+ "legal": "UVP = unverbindliche Preisempfehlung des Herstellers. Code BLACK10 gültig bis 30.11.2026, 23:59 Uhr.",
+ "cardBg": "#edeef2"
+}

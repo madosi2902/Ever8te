@@ -1,0 +1,130 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<!-- The Tennisbase – Signature-Vorlage für Social Posts.
+     Format über ?fmt=feed (1080x1350) oder ?fmt=story (1080x1920); Inhalte über ?d=<base64 JSON>.
+     Look: Shop-Design (Anthrazit #15181c, Weiß, Orange #ff5a1f, Blau #1b6ca3, Archivo Bold + Work Sans). -->
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#15181c; --ink2:#22272e; --white:#ffffff; --orange:#ff5a1f; --blue:#1b6ca3; --card:#f2f3f5; --mute:#a3abb5; --pad:72px; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html, body { background:var(--ink); }
+  body { width:1080px; color:var(--white); font-family:"Work Sans", sans-serif; overflow:hidden; position:relative; }
+  body.feed { height:1350px; } body.story { height:1920px; }
+  .abs { position:absolute; }
+  .archivo { font-family:Archivo, sans-serif; }
+
+  /* Kopfzeile: Logo + Wortmarke links, Aktions-Label rechts */
+  #head { top:60px; left:var(--pad); right:var(--pad); display:flex; justify-content:space-between; align-items:center; }
+  .mark { display:flex; align-items:center; gap:18px; font-family:Archivo, sans-serif; font-weight:700; font-size:30px; letter-spacing:-.01em; }
+  .mark svg { width:34px; height:46px; }
+  .label { font-weight:700; font-size:22px; letter-spacing:.16em; text-transform:uppercase; color:var(--orange); }
+
+  /* Haupttitel wie im Shop-Hero */
+  #eyebrow { left:var(--pad); color:var(--orange); font-weight:700; letter-spacing:.16em; font-size:24px; text-transform:uppercase; }
+  #title { left:var(--pad); right:var(--pad); font-family:Archivo, sans-serif; font-weight:800; letter-spacing:-.035em; line-height:.9; white-space:nowrap; transform-origin:left bottom; }
+
+  /* Produktkarte */
+  #card { border-radius:28px; background:var(--card); overflow:hidden; }
+  #card img { width:100%; height:100%; object-fit:contain; padding:36px; }
+  #badge { border-radius:999px; background:var(--orange); color:var(--white); font-family:Archivo, sans-serif; font-weight:800;
+           display:flex; align-items:center; justify-content:center; letter-spacing:-.02em; }
+
+  /* Produkt + Preis */
+  .brand { color:var(--mute); font-weight:600; letter-spacing:.14em; font-size:22px; text-transform:uppercase; }
+  .pname { font-family:Archivo, sans-serif; font-weight:800; letter-spacing:-.02em; line-height:1; margin-top:10px; }
+  .old { color:var(--mute); font-size:30px; position:relative; display:inline-block; }
+  .old .strike { position:absolute; left:-2px; right:-2px; top:52%; height:3px; background:var(--orange); transform-origin:left; }
+  .new { white-space:nowrap; font-family:Archivo, sans-serif; font-weight:800; letter-spacing:-.04em; line-height:1; }
+  .new .c { font-size:.42em; vertical-align:top; position:relative; top:.18em; margin-left:4px; }
+  .code { display:flex; align-items:center; gap:14px; margin-top:22px; font-size:24px; font-weight:600; white-space:nowrap; }
+  .code em { font-style:normal; font-family:Archivo, sans-serif; font-weight:800; font-size:30px; }
+  .code b { font-family:Archivo, sans-serif; font-weight:800; color:var(--orange); border:3px dashed var(--orange); padding:6px 16px; border-radius:6px; letter-spacing:.02em; }
+  .stock { display:flex; gap:12px; align-items:center; font-weight:500; font-size:24px; color:var(--mute); }
+  .stock i { width:12px; height:12px; border-radius:50%; background:var(--orange); }
+
+  /* Fußzeile */
+  #foot { left:var(--pad); right:var(--pad); display:flex; justify-content:space-between; align-items:center; }
+  .btn { background:var(--orange); color:var(--white); font-weight:700; font-size:32px; padding:26px 52px; border-radius:999px; }
+  .url { font-family:Archivo, sans-serif; font-weight:700; font-size:32px; }
+  .legal { left:var(--pad); right:var(--pad); color:#6f7882; font-size:17px; }
+
+  /* Layout Feed 1080x1350 */
+  .feed #eyebrow { top:150px; } .feed #title { top:186px; font-size:152px; }
+  .feed #card { left:var(--pad); top:370px; width:520px; height:690px; }
+  .feed #badge { left:436px; top:316px; width:170px; height:170px; font-size:54px; }
+  .feed #info { left:640px; top:400px; right:var(--pad); }
+  .feed .pname { font-size:58px; } .feed .new { font-size:118px; margin-top:6px; } .feed #prices { margin-top:46px; }
+  .feed .stock { margin-top:30px; }
+  .feed #foot { top:1110px; } .feed .legal { top:1270px; }
+
+  /* Layout Story/Reel 1080x1920 */
+  .story #head { top:110px; }
+  .story #eyebrow { top:230px; } .story #title { top:268px; font-size:156px; }
+  .story #card { left:var(--pad); right:var(--pad); top:480px; height:670px; }
+  .story #badge { right:46px; top:420px; width:210px; height:210px; font-size:66px; }
+  .story #info { left:var(--pad); right:var(--pad); top:1196px; }
+  .story .pname { font-size:68px; } .story #prices { margin-top:28px; display:flex; align-items:flex-end; gap:28px; } .story .old { margin-bottom:22px; order:2; } .story .new { font-size:150px; }
+  .story #sub { left:var(--pad); right:var(--pad); top:1610px; display:flex; justify-content:space-between; align-items:center; }
+  .story .code { margin-top:0; }
+  .story #foot { top:1730px; } .story .legal { top:1860px; }
+</style></head>
+<body>
+  <div id="head" class="abs">
+    <div class="mark"><svg viewBox="0 0 34 46" fill="none" stroke="#fff" stroke-width="4" stroke-linejoin="round"><rect x="2" y="2" width="30" height="42" rx="3"/><path d="M2 17h30M17 17v27"/></svg>The Tennisbase</div>
+    <div class="label" id="label"></div>
+  </div>
+  <div id="eyebrow" class="abs"></div>
+  <div id="title" class="abs"></div>
+  <div id="card" class="abs"><img id="img"></div>
+  <div id="badge" class="abs"></div>
+  <div id="info" class="abs">
+    <div id="nameblock"><div class="brand" id="brand"></div><div class="pname" id="pname"></div></div>
+    <div id="prices">
+      <div class="old"><span id="old"></span><span class="strike" id="strike"></span></div>
+      <div class="new" id="new"></div>
+      <div class="feed-only code" id="codeF"></div>
+      <div class="feed-only stock" id="stockF"></div>
+    </div>
+  </div>
+  <div id="sub" class="abs"><div class="code" id="codeS"></div><div class="stock" id="stockS"></div></div>
+  <div id="foot" class="abs"><div class="btn" id="cta"></div><div class="url">the-tennisbase.de</div></div>
+  <div class="legal abs" id="legal"></div>
+<script>
+const q = new URLSearchParams(location.search);
+const fmt = q.get('fmt') || 'feed';
+document.body.className = fmt;
+const D = JSON.parse(decodeURIComponent(escape(atob(q.get('d')))));
+const $ = id => document.getElementById(id);
+const eur = n => { const [a, b] = Number(n).toFixed(2).split('.'); return [a, b]; };
+$('label').textContent = D.label; $('eyebrow').textContent = D.eyebrow; $('title').textContent = D.title;
+$('img').src = D.image; $('badge').textContent = D.badge; $('brand').textContent = D.brand; $('pname').innerHTML = D.name;
+$('old').textContent = D.oldLabel;
+const [a, b] = eur(D.price); $('new').innerHTML = `${a}<span class="c">,${b} €</span>`;
+const codeHTML = D.code ? `<b>${D.code}</b> <em>${eur(D.codePrice).join(',')} €</em>` : '';
+$('card').style.background = D.cardBg || '';
+const stockHTML = D.stock ? `<i></i>${D.stock}` : '';
+if (fmt === 'feed') { $('codeF').innerHTML = codeHTML; $('stockF').innerHTML = stockHTML; $('sub').remove(); }
+else { $('codeS').innerHTML = codeHTML; $('stockS').innerHTML = stockHTML; $('codeF').remove(); $('stockF').remove(); }
+$('cta').textContent = D.cta; $('legal').textContent = D.legal || '';
+
+// Animation fürs Reel: render(t) in Sekunden
+const clamp = x => Math.max(0, Math.min(1, x)), seg = (t, s, e) => clamp((t - s) / (e - s));
+const out = x => 1 - Math.pow(1 - x, 3), back = x => { const c = 1.7; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+const set = (el, o, tr) => { if (!el) return; el.style.opacity = o; el.style.transform = tr || ''; };
+window.render = t => {
+  let k;
+  k = out(seg(t, .1, .6));  set($('head'), k, `translateY(${(1-k)*-30}px)`);
+  k = out(seg(t, .3, .8));  set($('eyebrow'), k, `translateX(${(1-k)*-40}px)`);
+  k = out(seg(t, .45, 1.1)); set($('title'), k, `translateY(${(1-k)*120}px)`);
+  k = out(seg(t, 1.2, 2.0)); set($('card'), k, `translateY(${(1-k)*260}px) scale(${.92+.08*k})`);
+  $('img').style.transform = `scale(${1 + Math.max(0,t-1.2)*0.012})`;
+  k = out(seg(t, 2.0, 2.6)); set($('nameblock'), k, `translateY(${(1-k)*50}px)`);
+  k = out(seg(t, 2.9, 3.4)); set($('prices'), k, `translateY(${(1-k)*50}px)`);
+  $('strike').style.transform = `scaleX(${out(seg(t, 3.5, 3.9))})`;
+  k = seg(t, 3.9, 4.4); $('new').style.transformOrigin = 'right bottom'; set($('new'), clamp(k*3), `scale(${.5+.5*back(k)})`);
+  k = seg(t, 4.5, 5.0); const p = t > 5.2 ? 1 + .035*Math.sin((t-5.2)*5) : 1; set($('badge'), clamp(k*3), `scale(${back(k)*p}) rotate(${(1-back(k))*-30}deg)`);
+  k = out(seg(t, 5.1, 5.6)); set($('sub'), k, `translateY(${(1-k)*40}px)`);
+  k = out(seg(t, 5.6, 6.2)); set($('foot'), k, `translateY(${(1-k)*80}px)`); set($('legal'), k);
+};
+</script>
+</body></html>
