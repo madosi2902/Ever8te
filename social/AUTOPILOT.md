@@ -9,7 +9,7 @@ Diese Anleitung gilt für die geplante Aufgabe, die **jeden Morgen** einen neuen
 | Arbeits-Branch | `claude/beautiful-ramanujan-ujo97y` (holen, darauf arbeiten, dorthin pushen) |
 | Buffer-Organisation | „My organization“ `6b07cd188cc59ff08127ae8f` |
 | Buffer-Kanal Instagram | **ever8te.nutrition** `6b07cee68541f09ecbab3594`. Jedes Video wird **zweimal** gepostet: als **Reel** und als **Story**. |
-| Buffer-Kanal TikTok | noch nicht verbunden. Jedes Mal mit `list_channels` prüfen; sobald ein TikTok-Kanal da ist, dort ebenfalls posten. |
+| Buffer-Kanal TikTok | **ever8te.nutrition** `6b096c298541f09ecbc0652e` (seit 27.11.2026). Jedes Video zusätzlich als TikTok-Post (`metadata.tiktok = {title: …}`, Caption wie Reel). TikTok-Storys kann Buffer über die Schnittstelle nicht anlegen (kein Story-Typ); bei Bedarf in der TikTok-App manuell teilen. |
 | Video-Hosting | Netlify-Projekt **ever8te-media**, Site-ID `f0b477ae-7400-4814-b3c3-490f3cea60fc`, https://ever8te-media.netlify.app |
 | Website ever8te.de | **niemals** deployen oder ändern (Live-Stand weicht vom Repo ab, siehe `live-snapshot/`) |
 | Postzeit | 14:00 Uhr Europe/Berlin |
