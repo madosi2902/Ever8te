@@ -8,3 +8,4 @@
 | 04 Ich vs. Ballmaschine | `videos/04_ballmaschine.mp4` | Ballmaschine auf Stufe 8 gestellt. Die Ballmaschine hat's bereut. 🎾💗 #tennis #ballmaschine #tennistraining #tennistiktok #ever8te |
 | 05 Doppelpartner | `videos/05_doppelpartner.mp4` | Markiere deinen Doppelpartner, der das auch macht. 👀💗 #padel #padeltiktok #doppel #tennis #ever8te |
 | 06 Black Week | `videos/06_blackweek.mp4` | BLACK WEEK 🖤💗 −10 % mit Code Black10 + Overgrips gratis dazu (3 Stück ab 1 Beutel, 10 Stück ab 2 Beuteln). Markier deinen Doppelpartner! #blackweek #blackfriday #padel #tennis #ever8te |
+| 07 Der Balltipper | https://ever8te-media.netlify.app/v/07_balltipper-1b26f3c239d9.mp4 | 47-mal Ball tippen vor dem Aufschlag? Kein Stress, ich hab Zeit. 🎾💗 Markier den Balltipper aus deinem Verein! #tennis #tennistiktok #aufschlag #tennislife #ever8te |
