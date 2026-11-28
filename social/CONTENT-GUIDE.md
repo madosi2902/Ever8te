@@ -50,7 +50,7 @@ EVER8TE ist ein Lebensmittel. Es gelten die **EU-Health-Claims-Verordnung (VO 19
 
 ## 5. Ideen-Backlog
 
-Bereits umgesetzt (in `clips/`): Satz 3 und abheben · Anime-Stufe 8 (Padel) · POV Turniertag · Ich vs. Ballmaschine · Doppelpartner klaut den Shaker · Black Week (Dialog) · Der Balltipper (07).
+Bereits umgesetzt (in `clips/`): Satz 3 und abheben · Anime-Stufe 8 (Padel) · POV Turniertag · Ich vs. Ballmaschine · Doppelpartner klaut den Shaker · Black Week (Dialog) · Der Balltipper (07) · Noch 3 Bälle (08).
 
 Offene Ideen (abhaken, wenn verwendet):
 - [ ] **Training nach der Arbeit:** Laptop zu, Schläger raus, Shaker als „Feierabend-Schalter“.
@@ -61,7 +61,7 @@ Offene Ideen (abhaken, wenn verwendet):
 - [ ] **Saitenriss:** Die Saite reißt, sie wechselt Schläger und Shaker im gleichen Move.
 - [x] **Der Gegner, der ewig den Ball tippt:** 47-mal Ball tippen vor dem Aufschlag. Sie trinkt in Ruhe aus.
 - [ ] **Medenspiel-Sonntag:** 8 Uhr Treffpunkt, Vereinsheim, 3 Einzel und 1 Doppel.
-- [ ] **Trainer sagt „noch 3 Bälle“:** Es werden 300.
+- [x] **Trainer sagt „noch 3 Bälle“:** Es werden 300.
 - [ ] **Hallensaison vs. Sommer:** Split-Screen Winterhalle und Sandplatz-Hitze.
 - [ ] **Netzroller-Glück:** Netzroller, Ball tänzelt auf der Netzkante, die 8 wird zur Waage.
 - [ ] **Shaker-ASMR:** Pulver rein, schütteln, „pling“. Ruhiger Clip, nur Sound und Linien.

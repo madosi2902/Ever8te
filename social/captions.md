@@ -9,3 +9,4 @@
 | 05 Doppelpartner | `videos/05_doppelpartner.mp4` | Markiere deinen Doppelpartner, der das auch macht. 👀💗 #padel #padeltiktok #doppel #tennis #ever8te |
 | 06 Black Week | `videos/06_blackweek.mp4` | BLACK WEEK 🖤💗 −10 % mit Code Black10 + Overgrips gratis dazu (3 Stück ab 1 Beutel, 10 Stück ab 2 Beuteln). Markier deinen Doppelpartner! #blackweek #blackfriday #padel #tennis #ever8te |
 | 07 Der Balltipper | https://ever8te-media.netlify.app/v/07_balltipper-1b26f3c239d9.mp4 | 47-mal Ball tippen vor dem Aufschlag? Kein Stress, ich hab Zeit. 🎾💗 Markier den Balltipper aus deinem Verein! #tennis #tennistiktok #aufschlag #tennislife #ever8te |
+| 08 Noch 3 Bälle | https://ever8te-media.netlify.app/v/08_noch3baelle-71076900f6e5.mp4 | Trainer: „Noch 3 Bälle!“ Ball 300: 😮💗 Markier deinen Trainer, der das auch immer sagt! 🎾 #tennis #tennistiktok #tennistraining #tennistrainer #ever8te |
